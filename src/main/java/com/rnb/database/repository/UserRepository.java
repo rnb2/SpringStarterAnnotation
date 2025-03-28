@@ -1,22 +1,28 @@
 package com.rnb.database.repository;
 
+import com.rnb.database.repository.pool.ConnectionPool;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
 import lombok.AllArgsConstructor;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @Repository
-@AllArgsConstructor
 @ToString
 public class UserRepository {
     private String userName;
-    //private Integer poolSize;
-    private List<Object> args;
-    private Map<String, Object> properties;
+    private ConnectionPool connectionPool;
+
+    public UserRepository(@Value("userName") String userName, ConnectionPool connectionPool) {
+        this.userName = userName;
+        this.connectionPool = connectionPool;
+    }
 
     @PostConstruct
     public void init() {

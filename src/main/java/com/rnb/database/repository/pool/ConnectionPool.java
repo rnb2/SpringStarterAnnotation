@@ -23,7 +23,4 @@ public class ConnectionPool {
         this.poolSize = poolSize;
         this.url = url;
     }
-
-    public ConnectionPool() {
-    }
 }

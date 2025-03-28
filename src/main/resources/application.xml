@@ -12,9 +12,15 @@
 <!--    </bean>-->
 
 <!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
-    <context:component-scan base-package="com.rnb"/>
-    <context:annotation-config/>
-    <context:property-placeholder location="classpath:application.properties"/>
+
+<!--    <context:component-scan base-package="com.rnb"/>-->
+<!--    <context:annotation-config/>-->
+
+
+<!-- Used  @PropertySource("classpath:application.properties") in the ApplicationConfiguration.java -->
+<!--    <context:property-placeholder location="classpath:application.properties"/>-->
+
+<!--   <bean class="com.rnb.config.ApplicationConfiguration"/>-->
 
    <bean name="driver" class="java.lang.String">
         <constructor-arg value="PostrgesDriver"/>
