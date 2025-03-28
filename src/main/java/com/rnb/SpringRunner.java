@@ -2,10 +2,9 @@ package com.rnb;
 
 
 import com.rnb.config.ApplicationConfiguration;
-import com.rnb.database.repository.CompanyRepository;
+import com.rnb.database.repository.ConnectionPoolTestRepository;
 import com.rnb.database.repository.UserRepository;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class SpringRunner {
 
@@ -20,8 +19,8 @@ public class SpringRunner {
         UserRepository userRepository = applicationContext.getBean(UserRepository.class);
         System.out.println(userRepository);
 
-        CompanyRepository companyRepository = applicationContext.getBean(CompanyRepository.class);
-        System.out.println(companyRepository);
+        ConnectionPoolTestRepository connectionPoolTestRepository = applicationContext.getBean(ConnectionPoolTestRepository.class);
+        System.out.println(connectionPoolTestRepository);
 
         applicationContext.close();
     }

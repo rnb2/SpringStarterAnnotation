@@ -21,6 +21,9 @@ public class ApplicationConfiguration {
     }
 
     @Bean("userRepository")
+    //@Profile("prod")
+    //@Profile("!prod")
+    @Profile("prod&web")
     public UserRepository userRepository() {
         return new UserRepository("budukh.rn", connectionPool());
     }
